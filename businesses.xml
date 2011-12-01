@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: swaplocal.xml 21505 2011-06-10 07:21:09Z infograf768 $ -->
+<extension type="component" version="1.7" method="upgrade">
+	<name>com_businesses</name>
+	<author>Jeffrey Ray</author>
+	<creationDate>Nov 2011</creationDate>
+	<copyright>
+	Copyright (C) 2011 Jeffrey Ray. All rights reserved.
+	Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.
+	</copyright>
+	
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>jeffrey.hallock@gmail.com</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>0.1.8</version>
+	<description>COM_BUSINESSES_XML_DESCRIPTION</description>
+	
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> <!-- Runs on update; New in 1.6 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<files folder="site">
+		<filename>businesses.php</filename>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<folder>helpers</folder>
+		<folder>models</folder>
+	</files>
+
+	<administration>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>businesses.php</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+		
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_businesses.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_businesses.sys.ini</language>
+		</languages>
+
+	</administration>
+</extension>
+
+
